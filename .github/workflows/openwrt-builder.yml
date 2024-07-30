@@ -9,12 +9,17 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
+# @docs https://p3terx.com/archives/build-openwrt-with-github-actions.html
 
 name: OpenWrt Builder
 
 on:
-  repository_dispatch:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+# on:
+#   repository_dispatch:
+#   workflow_dispatch:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -30,7 +35,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
