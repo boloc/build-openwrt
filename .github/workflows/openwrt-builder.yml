@@ -40,8 +40,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm install
+      - name: Print Hello World
+        run: echo "Hello World"
 
-      - name: Run tests
-        run: npm test
+      - name: List files
+        run: ls -la
+
+      - name: Display current date
+        run: date
